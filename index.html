@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Luna Droning Services | Texarkana Drone Measurements</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Luna Droning Services provides fast, accurate roof, wall, and land measurements for roofers, brick and masonry companies, and farmers in the Texarkana area."
+  />
+  <style>
+    :root {
+      --bg: #061320;            /* deep navy */
+      --bg-alt: #091a2c;
+      --accent: #ff6a1d;        /* Luna orange */
+      --accent-soft: rgba(255, 106, 29, 0.12);
+      --text-main: #fdf7e9;     /* warm off-white */
+      --text-soft: #d6d3cc;
+      --text-muted: #8b8a86;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #0b2238, var(--bg));
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(5,13,25,0.95));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: #020814;
+      padding: 3px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-text span:first-child {
+      font-size: 0.78rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.98rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--text-soft);
+      text-decoration: none;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s, transform 0.1s;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: #120907;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.94rem;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      box-shadow: 0 10px 25px rgba(255, 106, 29, 0.3);
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: #ff7f3d;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 35px rgba(255, 106, 29, 0.45);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      border: 1px solid rgba(255,255,255,0.24);
+      color: var(--text-main);
+      background: transparent;
+      text-decoration: none;
+      font-size: 0.86rem;
+      transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
+      white-space: nowrap;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: var(--accent);
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3.2rem 0 2.4rem;
+      background: radial-gradient(circle at top, #0e253c, transparent 60%);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-logo-big {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .hero-logo-big {
+        display: block;
+        margin-bottom: 1.2rem;
+      }
+      .hero-logo-big img {
+        width: 180px;
+        height: auto;
+      }
+    }
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.21em;
+      color: var(--text-muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw + 1rem, 3.2rem);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 0.97rem;
+      color: var(--text-soft);
+      max-width: 30rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      background: var(--accent-soft);
+      border-radius: 999px;
+      padding: 0.25rem 0.9rem;
+      margin-bottom: 1rem;
+      color: #ffd2ae;
+      border: 1px solid rgba(255, 106, 29, 0.5);
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #5df29c;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-right {
+      position: relative;
+      isolation: isolate;
+      min-height: 260px;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #132537, #050f1a);
+      border-radius: 1.4rem;
+      padding: 1.4rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero-card-tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-card-metric {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.35rem;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .hero-card-metric strong {
+      color: #ffe2c5;
+      font-weight: 600;
+    }
+
+    .hero-card-map {
+      margin-top: 0.8rem;
+      border-radius: 0.9rem;
+      border: 1px dashed rgba(255,255,255,0.18);
+      padding: 0.7rem 0.8rem;
+      background: linear-gradient(135deg, rgba(255,106,29,0.12), rgba(11,28,45,0.9));
+      font-size: 0.78rem;
+      color: #ffedd5;
+    }
+
+    /* Flight path line */
+    .flight-path {
+      position: absolute;
+      inset: -10px -40px auto auto;
+      max-width: 320px;
+      opacity: 0.6;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .flight-path path {
+      stroke: rgba(255, 255, 255, 0.18);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-dasharray: 4 6;
+      fill: none;
+      animation: dash 10s linear infinite;
+    }
+
+    .flight-path circle {
+      fill: var(--accent);
+      opacity: 0.9;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -200;
+      }
+    }
+
+    /* Process strip */
+    .process-strip {
+      background: var(--bg-alt);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .process-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      padding: 0.9rem 0;
+      justify-content: center;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+    }
+
+    .process-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      white-space: nowrap;
+    }
+
+    .process-item span {
+      color: #ffe2c5;
+    }
+
+    .process-arrow {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 0;
+      position: relative;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.16), transparent);
+      opacity: 0.5;
+    }
+
+    .section-header {
+      margin-bottom: 1.6rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-title-bar {
+      flex: none;
+      width: 40px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      max-width: 32rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.3rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      border-radius: 1.1rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.03), var(--bg));
+      padding: 1.1rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(255, 106, 29, 0.16), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.15s ease;
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.12);
+      box-shadow: 0 14px 35px rgba(0,0,0,0.7);
+    }
+
+    .card:hover::after {
+      opacity: 1;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    /* Pricing */
+    .pricing-row {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .pricing-row {
+        flex-direction: row;
+        align-items: stretch;
+      }
+    }
+
+    .pricing-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+    }
+
+    /* Contact */
+    .contact-wrapper {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .contact-wrapper {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+      }
+    }
+
+    form {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: var(--text-main);
+      margin-bottom: 0.15rem;
+      display: block;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.65rem 0.7rem;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(1, 6, 12, 0.9);
+      color: var(--text-main);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(255, 106, 29, 0.5);
+      background: #020814;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-info {
+      font-size: 0.87rem;
+      color: var(--text-soft);
+    }
+
+    .contact-info p {
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-highlight {
+      font-size: 0.85rem;
+      background: var(--accent-soft);
+      border-radius: 0.8rem;
+      padding: 0.7rem 0.8rem;
+      margin-top: 0.8rem;
+      border: 1px solid rgba(255, 106, 29, 0.45);
+      color: #ffe2c5;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 1.3rem 0 1.8rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    a {
+      color: #ffb07a;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 767px) {
+      nav {
+        flex-wrap: wrap;
+      }
+      .nav-links {
+        display: none; /* simple for now on mobile */
+      }
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-right {
+        margin-top: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <!-- Small logo in header -->
+          <img src="luna-logo.png" alt="Luna Droning Services logo" />
+          <div class="brand-text">
+            <span>TEXAS • DRONING</span>
+            <span>Luna Droning Services</span>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#industries">Industries</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a href="#contact" class="btn-outline">Request a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <!-- Big logo in hero on desktop -->
+        <div class="hero-logo-big">
+          <img src="luna-logo.png" alt="Luna Droning Services logo" />
+        </div>
+
+        <div class="hero-kicker">Texarkana, Texas & Surrounding Areas</div>
+        <h1 class="hero-title">
+          Drone measurements for<br />
+          <span>roofs, walls & farm land.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Luna Droning Services helps roofers, brick and masonry crews, and farmers
+          get precise measurements—without climbing a single ladder.
+        </p>
+
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          <span>“The sky is our workplace.”</span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#contact" class="btn-primary">Request a Quote</a>
+          <a
+            href="https://www.dropbox.com/request/49uF4LR37w9kdmSQ0xdB"
+            class="btn-outline"
+            target="_blank"
+            rel="noopener"
+          >
+            Upload Photos for Measurement
+          </a>
+        </div>
+
+        <p class="hero-note">
+          FAA-compliant operations • Insured flights • Fast turnaround • Local, family-run crew
+        </p>
+
+      </div>
+
+      <div class="hero-right">
+        <!-- Flight path SVG -->
+        <svg
+          class="flight-path"
+          viewBox="0 0 320 200"
+          aria-hidden="true"
+        >
+          <path d="M10 160 C 80 80, 180 60, 310 30" />
+          <circle cx="310" cy="30" r="4" />
+        </svg>
+
+        <!-- Hero metrics card -->
+        <div class="hero-card">
+          <div class="hero-card-tag">Sample Project</div>
+          <div class="hero-card-title">Residential Roof Scan · Texarkana</div>
+          <div class="hero-card-metric">
+            <span>Total roof area</span>
+            <strong>2,450 ft²</strong>
+          </div>
+          <div class="hero-card-metric">
+            <span>Roof planes detected</span>
+            <strong>12</strong>
+          </div>
+          <div class="hero-card-metric">
+            <span>Turnaround</span>
+            <strong>&lt; 24 hours</strong>
+          </div>
+          <div class="hero-card-map">
+            Drone imagery → Plan view → Measurements  
+            <br />Clean numbers your crew can bid from.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process strip -->
+  <div class="process-strip">
+    <div class="container">
+      <div class="process-inner">
+        <div class="process-item">
+          <span>Measured</span> <span class="process-arrow">→</span>
+        </div>
+        <div class="process-item">
+          <span>Mapped</span> <span class="process-arrow">→</span>
+        </div>
+        <div class="process-item">
+          <span>Delivered</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">What we fly for</div>
+        <h2 class="section-title">
+          Services
+          <span class="section-title-bar"></span>
+        </h2>
+        <p class="section-subtitle">
+          We fly the drone, process the imagery, and deliver the numbers your crew needs
+          to quote jobs with confidence.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="pill"><span class="pill-dot"></span>For Roofers</div>
+          <h3>Roof Measurements</h3>
+          <p>
+            Drone-based roof reports with total area, slopes, ridges and hips.
+            Perfect for estimates, repairs, and re-roofs—no ladder needed.
+          </p>
+        </div>
+        <div class="card">
+          <div class="pill"><span class="pill-dot"></span>For Masons</div>
+          <h3>Wall & Brick Takeoffs</h3>
+          <p>
+            Precise wall surface measurements so you know exactly how much brick,
+            block, or stone to order for each job.
+          </p>
+        </div>
+        <div class="card">
+          <div class="pill"><span class="pill-dot"></span>For Farmers</div>
+          <h3>Field & Hotspot Mapping</h3>
+          <p>
+            High-level views of your fields to spot problem areas, plan irrigation,
+            and track changes over time.
+          </p>
+        </div>
+        <div class="card">
+          <div class="pill"><span class="pill-dot"></span>Commercial Sites</div>
+          <h3>Site Documentation</h3>
+          <p>
+            Before-and-after drone photos and basic measurements for
+            progress tracking and project records.
+          </p>
+        </div>
+        <div class="card">
+          <div class="pill"><span class="pill-dot"></span>Land Owners</div>
+          <h3>Property Flyovers</h3>
+          <p>
+            Clean aerial shots of homes, land, and buildings to show the full layout
+            in one view.
+          </p>
+        </div>
+        <div class="card">
+          <div class="pill"><span class="pill-dot"></span>Custom</div>
+          <h3>Custom Drone Projects</h3>
+          <p>
+            Have something different in mind? Tell us what you’re trying to measure
+            or capture and we’ll plan a custom flight.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section id="industries">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Who we help</div>
+        <h2 class="section-title">
+          Industries
+          <span class="section-title-bar"></span>
+        </h2>
+        <p class="section-subtitle">
+          If your work depends on accurate numbers instead of guesses,
+          Luna Droning Services is built for you.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Trades & Construction</h3>
+          <p>
+            • Roofing companies<br />
+            • Brick & masonry crews<br />
+            • General contractors<br />
+            • Siding & exterior installers
+          </p>
+        </div>
+        <div class="card">
+          <h3>Land & Property</h3>
+          <p>
+            • Farmers & ranchers<br />
+            • Land developers<br />
+            • Real estate agents<br />
+            • Insurance adjusters
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Simple pricing</div>
+        <h2 class="section-title">
+          Pricing
+          <span class="section-title-bar"></span>
+        </h2>
+        <p class="section-subtitle">
+          Final quotes depend on roof complexity, structure size, and travel distance.
+          Once we know the project, we keep pricing straight and simple.
+        </p>
+      </div>
+
+      <div class="pricing-row">
+        <div class="card" style="flex: 1;">
+          <h3>Roof Measurement Packages</h3>
+          <p>
+            Ideal for roofers bidding residential or light commercial jobs.
+            Includes drone flight, processing, and measurement report.
+          </p>
+          <p class="pricing-note">
+            • Single-family homes starting at <strong>$___</strong><br />
+            • Larger & complex roofs quoted per project
+          </p>
+        </div>
+
+        <div class="card" style="flex: 1;">
+          <h3>Wall & Land Packages</h3>
+          <p>
+            Best for brick, masonry, and farm/land projects where area, length,
+            or coverage matters.
+          </p>
+          <p class="pricing-note">
+            • Wall measurements starting at <strong>$___</strong><br />
+            • Field & land mapping quoted after a quick site review
+          </p>
+        </div>
+      </div>
+
+      <p class="pricing-note">
+        Tell us about your typical jobs and we can build a simple price sheet just for your company.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Start a project</div>
+        <h2 class="section-title">
+          Request a Quote
+          <span class="section-title-bar"></span>
+        </h2>
+        <p class="section-subtitle">
+          Share a few details about what you need measured and we’ll get back to you
+          with next steps and a clear price.
+        </p>
+      </div>
+
+      <div class="contact-wrapper">
+        <div>
+          <div style="margin-bottom: 1rem;">
+            <a
+              href="https://www.dropbox.com/request/49uF4LR37w9kdmSQ0xdB"
+              class="btn-primary"
+              target="_blank"
+              rel="noopener"
+            >
+              Upload Photos for Measurement
+            </a>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">
+              Already have photos with our scaling tool? Upload them here for faster turnaround.
+            </p>
+          </div>
+          <form>
+            <div>
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="you@example.com" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" type="tel" placeholder="903-___-____" required />
+            </div>
+            <div>
+              <label for="service">Service</label>
+              <select id="service">
+                <option value="">Select one...</option>
+                <option value="roof">Roof measurements</option>
+                <option value="wall">Wall / brick takeoffs</option>
+                <option value="land">Field / land mapping</option>
+                <option value="photo">Photos / video only</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="details">Project Details</label>
+              <textarea id="details" placeholder="Address, structure type, deadlines, anything we should know…"></textarea>
+            </div>
+            <button class="btn-primary" type="submit">Send Request</button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <p><strong>Luna Droning Services</strong></p>
+          <p>Texarkana, Texas</p>
+          <p>Phone: <a href="tel:18708105126">870-810-5126</a></p>
+          <p>Email: <a href="mailto:lunadroning@gmail.com">lunadroning@gmail.com</a></p>
+
+          <div class="contact-highlight">
+            Prefer to talk it through?<br />
+            Call or text <strong>870-810-5126</strong> and tell us what you need measured —
+            we’ll walk you through the options.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; <span id="year"></span> Luna Droning Services. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
